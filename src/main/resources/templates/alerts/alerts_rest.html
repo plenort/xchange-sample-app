@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+<div th:fragment="alerts-form" class="row">
+    <form class="form-inline">
+        <div class="form-group">
+            <label for="pair">Currency Pair:</label>
+            <input id="pair" class="form-control"/>
+            <label for="limit">Limit:</label>
+            <input id="limit" class="form-control">
+            <button id="addAlert" class="btn btn-default" type="submit">Add Alert
+            </button>
+            <button id="removeAlert" class="btn btn-default" type="submit">Remove Alert
+            </button>
+        </div>
+    </form>
+    <small id="form-result"></small>
+</div>
+<div th:fragment="alerts-list" class="row">
+    <div id="alertsList" class="col-md-6"></div>
+</div>
+</body>
+</html>

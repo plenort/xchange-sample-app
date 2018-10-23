@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>XChange Sample Project</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/app.js"></script>
+</head>
+<body>
+<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+    enabled. Please enable
+    Javascript and reload this page!</h2></noscript>
+<div id="main-content" class="container">
+    <hr>
+    <div th:insert="alerts/alerts_rest :: alerts-form">...</div>
+    <div class="row"></div>
+    <hr>
+    <div class="row"><label for="alertsNumber" class="display-2">Stored alerts: </label>
+        <span class="display-2" id="alertsNumber" th:utext="${alertsNumber}"></span>
+        <div th:insert="alerts/alerts_rest :: alerts-list">...</div>
+    </div>
+    <hr>
+    <div class="row">
+        <div th:insert="alerts/alerts_websocket :: websocket">...</div>
+    </div>
+</div>
+</body>
+</html>

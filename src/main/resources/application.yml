@@ -1,0 +1,41 @@
+###
+#   Database Settings
+###
+spring:
+  datasource:
+    url: jdbc:h2:file:~/h2/app_db;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+###
+#   H2 Settings
+###
+h2:
+  console:
+    enabled: true
+    path: /console
+    settings:
+      trace: false
+      web-allow-others: false
+
+###
+#    Bitcoin Alert Settings
+###
+alert:
+  check:
+    interval.in.milliseconds: 10000
+    initial.delay.in.milliseconds: 10000
+
+###
+#    Logging
+###
+logging:
+  level:
+    com.xchange.sample*: trace
+    root: info
+    org.springframework.web: info
+    org.hibernate: WARN
